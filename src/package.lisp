@@ -4,5 +4,5 @@
   (:use #:cl
         #:alexandria
         #:parsley)
-  (:export #:load-file
-           #:dump-file))
+  (:export #:load-gltf
+           #:load-buffer))

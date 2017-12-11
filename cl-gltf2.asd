@@ -12,11 +12,13 @@
                        (uiop/pathname:subpathname *load-pathname* "README.md"))
   :depends-on (#:alexandria
                #:parsley
-               #:cl-json)
+               #:cl-json
+               #:cl-opengl)
   :pathname "src"
   :serial t
   :components
   ((:file "package")
    (:file "gltf2")
    (:file "datastream")
-   (:file "chunk")))
+   (:file "chunk")
+   (:file "buffers")))
