@@ -5,4 +5,5 @@
         #:alexandria
         #:parsley)
   (:export #:load-gltf
-           #:load-buffer))
+           #:load-mesh
+           #:draw-func))

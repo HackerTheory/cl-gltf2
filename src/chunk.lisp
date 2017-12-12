@@ -36,11 +36,17 @@
 
 (defmethod parse-chunk-data ((chunk-type (eql :json-content)))
   (let ((data (read-string :encoding :utf-8)))
-    (setf (json *object*) (json:decode-json-from-string data))
+    (setf (json *object*) (jsown:parse data))
     data))
 
 (defmethod parse-chunk-data ((chunk-type (eql :binary-buffer)))
-  (parse-json-data :root)
+  (loop :with buffers = (get-property "buffers")
+        :with data = (make-array (length buffers))
+        :for buffer :in buffers
+        :for index :below (length buffers)
+        :for size = (get-property "byteLength" buffer)
+        :do (setf (aref data index) (read-bytes size))
+        :finally (setf (buffers *object*) data))
   nil)
 
 (defmethod parse-chunk-data ((chunk-type (eql :unknown)))
