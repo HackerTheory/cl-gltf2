@@ -1,7 +1,7 @@
 (asdf:defsystem #:cl-gltf2
   :description "A loader for glTF2 (OpenGL Transmission Format) files."
-  :author ("Michael Fiano <michael.fiano@gmail.com>")
-  :maintainer "Michael Fiano <michael.fiano@gmail.com>"
+  :author ("Michael Fiano <mail@michaelfiano.com>")
+  :maintainer "Michael Fiano <mail@michaelfiano.com>"
   :license "MIT"
   :homepage "https://github.com/mfiano/cl-gltf2"
   :bug-tracker "https://github.com/mfiano/cl-gltf2/issues"
